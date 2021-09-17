@@ -1,0 +1,73 @@
+//To  print number entered by user
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n1,n2;
+	cout <<"Enter first number:"<< endl;
+	cin >> n1;
+	cout <<"Enter second number:"<<endl;
+	cin >> n2;
+	cout<<"Numbers entered by user"<< endl;
+	cout <<"First Number="<<n1<<endl<<"Second Number="<<n2<<endl;
+	return 0;
+}
+
+//To Add Two Numbers entered by user
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n1,n2,add;
+	cout << "Enter first number:" << endl;
+	cin >> n1;
+	cout << "Enter second number:" <<endl;
+	cin >> n2;
+	add=n1+n2;
+	cout << "Addition of "<<n1<<" and "<<n2<<" is: "<<add;
+	return 0;
+}
+
+
+// To swapping two numbers entered by user
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n1,n2,temp;
+	cout << "Enter first number:" << endl;
+	cin >> n1;
+	cout << "Enter second number:" <<endl;
+	cin >> n2;
+	cout<<"\nBefore Swapping the numbers \n";
+	cout <<"First Number="<<n1<<endl<<"Second Number="<<n2<<endl;
+	temp=n1;
+	n1=n2;
+	n2=temp;
+	cout<<endl;
+	cout<<"After Swapping numbers"<<endl<<"first number ="<<n1<<endl<<" second number="<<n2<<endl;
+	return 0;
+}
+
+
+// Entered number is even or odd
+#include<iostream>
+using namespace std;
+int main()
+{
+	int num;
+	cout << "Enter the number:" << endl;
+	cin >> num;
+	cout<<endl;
+	if(num%2==0)
+		cout<<num<<" is even number \n";
+	else
+		cout<<num<<" is odd number \n";
+	
+	return 0;
+}
+
