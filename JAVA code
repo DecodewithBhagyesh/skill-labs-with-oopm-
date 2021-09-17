@@ -1,0 +1,87 @@
+// print entered numbers
+import java.util.Scanner;
+public class printnumbers
+{
+
+	public static void main(String[] args)
+	{
+		try (Scanner sc = new Scanner(System.in)) {
+			int n1,n2;
+            System.out.println("Enter first number");
+            n1=sc.nextInt();
+            System.out.println("Enter second number");
+		    n2=sc.nextInt();
+		    System.out.println("Numbers entered by user" + "\n" + "First number =" +n1+ "\n" +"Second number = " +n2);
+		}
+    }
+
+}
+
+
+//add two numbers
+import java.util.Scanner;
+public class add_2_numbers 
+{
+
+	public static void main(String[] args) 
+   {
+		try (Scanner sc = new Scanner(System.in)) 
+		{
+			int n1,n2;
+            System.out.println("Enter first number");
+            n1=sc.nextInt();
+            System.out.println("Enter second number");
+            n2=sc.nextInt();
+            System.out.println("\nAddition of entered numbers is: " +(n1+n2));
+		}
+    }
+}
+
+
+// swap to numbers
+import java.util.Scanner;
+public class swapping 
+{
+
+	public static void main(String[] args) 
+	{
+		try (Scanner sc = new Scanner(System.in)) 
+		{
+			int n1,n2,temp;
+            System.out.println("Enter first number");
+            n1=sc.nextInt();
+            System.out.println("Enter second number");
+            n2=sc.nextInt();
+            System.out.println("Before swapping first number= " +n1+ " second number= " +n2);
+            temp=n1;
+            n1=n2;
+            n2=temp;
+            System.out.println("After swapping first number = "+n1+" second number = "+n2);
+		}
+	}
+
+}
+
+
+//even or odd
+import java.util.Scanner;
+public class even_or_odd 
+{
+
+	public static void main(String[] args) 
+	{
+		try (Scanner sc = new Scanner(System.in)) 
+		{
+			int n1;
+            System.out.println("Enter the number");
+            n1=sc.nextInt();
+		    if(n1%2==0)
+               System.out.println(n1+ " is Even number");
+            else
+               System.out.println(n1+ " is Odd number");
+		}
+
+	  
+	}
+
+}
