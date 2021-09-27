@@ -1,0 +1,227 @@
+// To create  Basic Bank Management System using Constructors
+#include<iostream>
+using namespace std;
+
+class Bankcode
+{
+	public:
+        string name;
+	    char account_type;
+	    int account_number;
+		int amount;
+	    float balance;
+		
+	Bankcode(string n ,int a, char t, float b)
+	 {
+		name = n;
+		account_number=a;
+		account_type=t;
+		balance=b;
+	}
+	
+	
+     int deposit()
+	{
+		cout<<"Enter the amount to	deposit: "<<endl;
+		cin>> amount;
+		if(amount<0)
+		{
+			cout<<"Invalid amount,Enter a valid amount"<<endl; 
+			return 0;
+		}
+		balance=balance+amount;
+		return 1;
+	}	
+	
+	
+	int withdraw()
+	{
+		cout<<"Your Balance= "	<<balance; 
+		cout<<"Enter amount to withdraw: "<<endl; 
+		cin>> amount;
+		 if (balance<amount)
+		{
+			cout<<"Insufficient Balance:  "<<endl; 
+			return 0;
+		}
+		if(amount<0)
+		{
+			cout<<"Invalid	amount"<<endl; 
+			return 0;
+		}
+		balance=balance-amount; 
+		return 1;
+	}
+	
+	
+	void display()
+	{
+		cout<<"Name : "<<name<<endl;
+		cout<<"Account Number:" <<account_number<<endl;
+		cout<<"Account Type:" <<account_type<<endl;
+		cout<<"Balance: " <<balance<<endl;
+	}
+
+};
+
+
+int main()
+{
+	char ans;
+	int account_number;
+	int op;
+    
+    Bankcode b1("salman",1,'s',2000);
+
+	Bankcode b2("makarand",2,'s',2000);
+
+	Bankcode b3("siddharth",3,'s',2000);
+
+	
+	cout<<"Menu"<<endl;
+	cout<<"1.Deposit"<<endl ;
+	cout<<"2.Withdraw"<<endl;
+	cout<<"3.Display"<<endl;
+    cout<<"Enter option"<<endl; 
+    cin>>op;
+    
+    do
+
+		{
+
+			cout<<"Please enter your account number:"<<endl; 
+
+			cin>>account_number;		
+
+				switch(account_number)
+
+				{
+
+					case 1:	if(op==1)
+
+								b1.deposit();
+
+							if(op==2)
+
+								b1.withdraw();
+
+							if(op==3)
+
+								b1.display();
+
+							
+
+							break;
+
+					case 2:	if(op==1)
+
+								b2.deposit();
+
+							if(op==2)
+
+								b2.withdraw();
+
+							if(op==3)
+
+								b2.display();
+
+							
+
+							break;
+
+					case 3:	if(op==1)
+
+								b3.deposit();
+
+							if(op==2)
+
+								b3.withdraw();
+
+							if(op==3)
+
+								b3.display();
+
+							
+
+							break;
+
+					default: 
+					        cout<<"Enter value between 1 to 3"<<endl;
+
+							break;
+
+				}
+				
+	            cout<<"Do you want to continue?[Y/N]";
+				cin>>ans; 
+				 
+				if(ans=='Y' || ans == 'y') 
+				{
+					cout<<"Menu"<<endl;
+					cout<<"1.Deposit"<<endl;
+					cout<<"2.Withdraw"<<endl;
+					cout<<"3.Display"<<endl;
+					cout<<"Enter option"<<endl; 
+					cin>>op;
+					
+				}
+		}	
+
+			while(ans!='N');
+			
+	return 0;	
+}
+
+
+
+
+// To create a class student with two method getdata() and printdata(), getdata() to get value from the user and display the data in printdata(),
+create two objects s1, s2 to declare and access values from calss StudentTest//
+
+#include<iostream>
+using namespace std;
+
+class Student
+{
+	public:
+	int rollnum;
+	string name;
+	string branch;
+	float cgpa;
+	
+	int getdata()
+	{
+		cout<<"Enter your rollno :"<<endl;
+        cin>>rollnum;
+        cout<<"Enter your name :"<<endl;
+        cin>>name;
+        cout<<"Enter your branch :"<<endl;
+        cin>>branch;
+        cout<<"Enter the CGPA  :"<<endl;
+        cin>>cgpa;
+	}
+	
+	int printdata()
+	{
+		
+        cout<<"Marksheet of student is as follows : "<<endl;
+        cout<<"Roll number : "<<rollnum<<endl;
+        cout<<"Name: "<<name<<endl;
+        cout<<"Branch: "<<branch<<endl;
+        cout<<"Your CGPA : "<<cgpa<<endl;
+	}
+};
+ 
+
+
+int main()
+{
+	Student s1,s2;
+	s1.getdata();
+	s1.printdata();
+	s2.getdata();
+	s2.printdata();
+	
+	return 0;
+	
+}
