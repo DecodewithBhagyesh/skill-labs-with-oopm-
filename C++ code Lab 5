@@ -1,0 +1,121 @@
+//To perform Operator Overloading using C++ for Multiplying 2 complex numbers
+
+#include<iostream>
+
+using namespace std;
+
+class Complex
+{
+	public:
+		int real;
+		int img;
+		
+	//multiply function to multiply two complex numbers
+    int multiply(Complex c1,Complex c2)
+   {
+      int x,y;
+      x=(c1.real*c2.real)-(c1.img*c2.img);
+      y=(c1.real*c2.img)+(c1.img*c2.real);
+      cout<<"\n("<<c1.real<<"+"<<c1.img<<"i)*("<<c2.real<<"+"<<c2.img<<"i)=("<<x<<"+"<<y<<"i)";
+   }
+   //Overloading increment operator to increment complex number
+   Complex operator ++()
+  {
+    Complex x;
+    x.real=++real;
+    x.img=++img;
+    return x;
+  }
+   
+};
+
+int main ()
+{
+
+Complex a,b,d;
+cout<<"\nEnter real and imaginary part of first complex number:";
+cin>>a.real>>a.img;
+cout<<"\nEnter real and imaginary part of second complex number:";
+cin>>b.real>>b.img;
+
+d.multiply(a,b);
+
+
+return 0;
+}
+
+
+
+
+
+//Write a C++ program to overload the ‘+’ operator so that it can add two matrices.
+
+# include<iostream>
+
+using namespace std;
+
+class matrices
+{
+	int x[2][2];
+	int y[2][2];
+	int z[2][2];
+
+	public:
+        void get_elements();	//take numbers from user
+        matrices operator +(matrices m2);	//operator overloading
+        void display();	//print the result
+};
+//functions outside class, using scope resolution
+void matrices::get_elements()
+{
+   cout<<"Enter the elements for matrix:"<<endl;
+
+   for(int i=0;i<2;i++)	//for row
+   {
+        for(int j=0;j<2;j++)	//for columns
+        cin>>x[i][j];
+   }
+   
+}
+
+void matrices:: display()
+{
+   for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<2;j++)
+        cout<<x[i][j]<<"  ";
+        cout<<endl;
+	}
+
+}
+
+matrices matrices::operator+(matrices m2)
+{
+    matrices m3;
+    for(int i=0;i<3;i++)
+	{
+        for(int j=0;j<2;j++)
+        m3.x[i][j]=x[i][j]+m2.x[i][j];
+
+	}	
+
+	return(m3);
+
+}
+
+int main()
+
+{
+
+	matrices ob1,ob2;
+	ob1.get_elements();
+	ob2.get_elements();
+	cout<<"\nMatrix 1:\n";
+	ob1.display();
+	cout<<"\nMatrix 2:\n";
+	ob2.display();
+	ob1=ob1+ob2;
+	cout<<"\nAddition of two matrices:\n";
+	ob1.display();
+
+}
