@@ -1,0 +1,105 @@
+// C++ program to demonstrate the working of friend function
+
+#include <iostream>
+using namespace std;
+
+class salary
+{
+    private:
+    int sal;
+               
+    public:
+    int getdata()
+       { 
+        cout<<"\nYour base salary is:"<<sal<<endl;
+        return 0;
+       }
+        salary() 
+        {
+			sal=25000;
+		}
+		// friend function
+        friend int addbonus(salary);  
+};
+
+// friend function definition
+int addbonus(salary s)
+{
+
+    //accessing private members from the friend function
+    s.sal +=5000;
+    return s.sal;
+}
+
+int main() 
+{
+    salary s;
+    string name;
+    cout<<"\nEnter employee name:";
+    cin>>name;
+    s.getdata();
+    cout<<"\n---Salary details---"<<endl;
+    cout<<"\nEmployee name:"<<name<<endl;
+    cout<<"\n";
+    cout << "Your Total Salary is: "<<addbonus(s);
+
+    return 0;
+}
+
+
+
+
+
+
+
+//C++ program to demonstrate the working of friend class
+
+#include <iostream>
+using namespace std;
+
+// forward declaration
+class ClassY;
+
+
+class ClassX 
+{
+  int digit1;
+
+  public:
+      ClassX()
+      {
+        digit1=50;
+      }
+      
+     friend class ClassY;  // friend class declaration
+};
+
+class ClassY 
+{
+    int digit2;
+
+
+    public:
+    int mul;
+        ClassY()
+        {
+            digit2=15;
+        }
+
+    int multiply() 
+    {   
+        ClassX m;
+        return m.digit1 * digit2;
+
+    }
+};
+
+int main() 
+{
+    ClassY n;
+    n.multiply();
+    cout<<"\nMultiplication: "<<n.multiply();
+    return 0;
+}
+
+
