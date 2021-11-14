@@ -1,0 +1,127 @@
+Program 1: // To perform Hierarchical Inheritance in JAVA. Create an Employeeclass with attributes EmpID and EmpSalary. Also create necessary
+methods/constructors to accept these values from the user. Create classespermenantEmployee and TemporaryEmployee which will be derived classes of
+Employee. Mention hike attribute in these derived classes and calculate the totalsalary using generate_salary() method for respective types of employees.
+Objects of the derived classes should be created and salaries for the permanentand temporary employees should be calculated and displayed on the screen.//
+
+
+package inheritence_java;
+
+class employee
+{
+	float salary = 25000;
+	void display()
+	{
+		System.out.println("Basic Salary is:" + salary);
+	}
+}
+
+class Permanentemp extends employee
+{
+	double hike = 0.8;
+	
+	void incrementsalary()
+	{
+		super.display();
+		System.out.println("Salary of Permanent employee after increment is:" + (salary+(salary *hike)) );
+	}
+}
+
+class Temporaryemp extends employee
+{
+	double hike = 0.25;
+	
+	void incrementsalary()
+	{
+		System.out.println("");
+		System.out.println("Salary of Temporary employee after increment is:" + (salary+(salary *hike)) );
+	}
+}
+
+
+public class Hierarchical_inheritance 
+{
+	public static void main(String args[])
+	{
+		Permanentemp per = new Permanentemp();
+		Temporaryemp temp = new Temporaryemp();
+		per.incrementsalary();
+		temp.incrementsalary();
+	}
+
+}
+
+
+
+Program 2: //To perform Multilevel Inheritance in JAVA. Create a
+Person class representing name, age and address. Inherit person class toemployee class with emp ID and salary factor. Inherit the Employee class to
+programmer class with technical skills and hike attributes. Implement validmethods to input the details from the user in the main method and display forprogrammers.//
+
+
+package inheritence_java;
+
+import java.util.Scanner;
+
+class person
+{
+	String name, address;
+	int age;
+	Scanner in = new Scanner(System.in);
+	void display()
+	{
+		System.out.println("***Details of the Programmer***");
+		System.out.println("Enter your name:");
+		name=in.next();
+		System.out.println("Enter your age:");
+		age=in.nextInt();
+		System.out.println("Enter your residental address:");
+		address=in.next();
+	}	
+}
+
+class employee1 extends person
+{
+	int empid;
+	float salary=40000 ;
+	Scanner in= new Scanner(System.in);
+	void getdata()
+	{
+		System.out.println("Employee ID is:");
+		empid=in.nextInt();
+	}
+	
+	void getsalary()
+	{
+		System.out.println("Base Salary is:" +salary);
+	}
+}
+
+class programmer extends employee1
+{
+	Scanner in = new Scanner(System.in);
+	String Profession;
+	double hike=0.5 ;
+	void printdata()
+	{
+		System.out.println("Technical Skills/Profession: ");
+		Profession=in.next();
+	}
+	
+	void hikesalary() 
+	{
+		super.getsalary();
+		System.out.println("Salary after increment is: " +(salary+(salary*hike)) );
+	}
+}
+public class Multilevel_inheitence
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+     employee1 emp = new employee1();
+     programmer p = new programmer();
+     emp.display();
+     emp.getdata();
+     p.printdata();
+     p.hikesalary();
+	}
+}
