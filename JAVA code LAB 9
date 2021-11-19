@@ -1,0 +1,73 @@
+//Write a java program to create an abstract class named Shape that contains two integers and an abstract method named printArea(). 
+//Provide three classes named Rectangle, Triangle and Circle such that each one of the classes extends the class Shape. 
+//Each one of the classes contain only the method printArea() that prints the area of the given shape.
+
+
+import java.util.Scanner;
+
+abstract class shape
+{
+	abstract void printarea();
+}
+
+class Rectangle extends shape
+{
+	Scanner in=new Scanner(System.in);
+	int a1,l,b;
+	void printarea()
+	{
+		System.out.println("Enter length:");
+		l=in.nextInt();
+		System.out.println("Enter Breadth:");
+		b=in.nextInt();
+		a1=l*b;
+		System.out.println("Area of Rectangle is: " +a1);
+	}
+}
+
+class Triangle extends shape
+{
+	Scanner in=new Scanner(System.in);
+	double a2;
+	int ba,h;
+	void printarea()
+	{
+		System.out.println("Enter base:");
+		ba=in.nextInt();
+		System.out.println("Enter height:");
+		h=in.nextInt();
+		a2=0.5*ba*h;
+		System.out.println("Area of Triangle is: " +a2);
+	}
+}
+
+class Circle extends shape
+{
+	Scanner in=new Scanner(System.in);
+	double r,a3;
+	void printarea()
+	{
+		System.out.println("Enter radius:");
+		r=in.nextInt();
+		a3=3.14*r*r;
+		System.out.println("Area of Circle is: " +a3);
+	}
+}
+
+
+public class abstract_shape 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+        shape r=new Rectangle();
+        shape t=new Triangle();
+        shape c=new Circle();
+        r.printarea();
+        t.printarea();
+        c.printarea();
+        
+	}
+
+}
