@@ -1,0 +1,48 @@
+//Write a java program to implement Multiple Inheritance using Interfaces.
+//Create an interface called Management with selectCandidate() method. Another interface called Department with allotSubject() method.
+//Class called HOD will implements these two interfaces and define the methods and access them with valid objects.
+
+package inheritence_java;
+
+import java.util.Scanner;
+
+interface Management
+{
+	public void selectcandidate();
+}
+
+interface Department
+{
+	public void allotsubject();
+}
+
+public class interface_multiple implements Management,Department
+{
+	static String name;
+	static String dept;
+	static String sub;
+	Scanner in = new Scanner(System.in);
+	
+	public void selectcandidate()
+	{
+		System.out.println("Enter the candidate name:");
+		name= in.next();
+	}
+	
+	public void allotsubject()
+	{
+		System.out.println("Enter alloted department:");
+		dept= in.next();
+		System.out.println("Enter subject:");
+		sub= in.next();	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        interface_multiple i = new interface_multiple();
+        i.selectcandidate();
+        i.allotsubject();
+        System.out.println("Candidate name is:"+name);
+        System.out.println("Alloted Department:"+dept);
+        System.out.println("Alloted Subject:"+sub);
+	}
+}
