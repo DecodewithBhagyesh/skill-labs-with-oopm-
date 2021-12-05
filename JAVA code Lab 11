@@ -1,0 +1,92 @@
+//Write a program in java if a number is less than 0 and greater than 10 it generates the user-defined exception "out of range". Else it displays the square of the number.//
+
+package inheritence_java;
+
+import java.util.Scanner;
+
+class outofRangeException  extends Exception  
+{  
+ public outofRangeException (String str)  
+ {  
+     // calling the constructor of parent Exception  
+     super(str);  
+ }  
+}  
+public class Lab11_1 
+{
+  
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		try
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.print("Enter your Number: ");  
+   	    int a= sc.nextInt();
+   	    
+		if(a<0 || a>10)
+		{
+		throw(new outofRangeException("valid range is between 1 to 10"));
+		}
+		else
+		{
+		int s=a*a;
+		System.out.println("Square of your entered number is:"+s);
+		}
+	}
+		
+		catch(Exception ex)
+		{
+		System.out.println(ex);
+		}
+
+
+	}
+
+}
+
+
+//Write a program in java to enter the number. If the first and second number is not entered it will generate the exception. //
+//Also, divide the first number with the second number and generate the arithmetic exception.//
+
+
+package inheritence_java;
+
+import java.util.Scanner;
+
+public class Lab11_2 
+{
+
+	private static Scanner sc;
+
+	public static void main(String[] args) 
+ {
+		// TODO Auto-generated method stub
+		try
+	{
+		sc = new Scanner(System.in);
+		System.out.print("Enter your First Number: ");  
+	   	int a= sc.nextInt();
+	   	System.out.print("Enter your Second Number: ");  
+	   	int b= sc.nextInt();
+	   	
+		
+		if(b==0)
+		{
+		throw(new Exception("second argument should be non zero"));
+		}
+		else
+		{
+		double c= a/b;
+		System.out.println("result:"+c);
+		}
+	}
+		
+		catch(Exception e)
+		{
+		System.out.println(e);
+		}
+ }
+
+}
